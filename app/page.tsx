@@ -1,50 +1,55 @@
 import { Link } from "@nextui-org/link";
 import { Snippet } from "@nextui-org/snippet";
-import { Code } from "@nextui-org/code"
+import { Code } from "@nextui-org/code";
 import { button as buttonStyles } from "@nextui-org/theme";
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
+import { GithubIcon, HeartFilledIcon } from "@/components/icons";
+import {Input} from "@nextui-org/input";
+import { Button } from "@nextui-org/button";
+
 
 export default function Home() {
 	return (
 		<section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
 			<div className="inline-block max-w-lg text-center justify-center">
-				<h1 className={title()}>Make&nbsp;</h1>
-				<h1 className={title({ color: "violet" })}>beautiful&nbsp;</h1>
-				<br />
-				<h1 className={title()}>
-					websites regardless of your design experience.
-				</h1>
+				<h1 className={title()}>Effortless M3U8 to MP4 Conversion</h1>
 				<h2 className={subtitle({ class: "mt-4" })}>
-					Beautiful, fast and modern React UI library.
+					Unlock the power of seamless multimedia transformation.
 				</h2>
 			</div>
 
-			<div className="flex gap-3">
+			<div className="flex gap-3 mt-6">
 				<Link
 					isExternal
-					href={siteConfig.links.docs}
-					className={buttonStyles({ color: "primary", radius: "full", variant: "shadow" })}
+					href="#replace-with-your-documentation-link"
+					className={buttonStyles({
+						color: "primary",
+						radius: "full",
+						variant: "shadow",
+					})}
 				>
 					Documentation
 				</Link>
 				<Link
 					isExternal
 					className={buttonStyles({ variant: "bordered", radius: "full" })}
-					href={siteConfig.links.github}
+					href="#replace-with-your-github-link"
 				>
 					<GithubIcon size={20} />
 					GitHub
 				</Link>
 			</div>
 
-			<div className="mt-8">
-				<Snippet hideSymbol hideCopyButton variant="flat">
-					<span>
-						Get started by editing <Code color="primary">app/page.tsx</Code>
-					</span>
-				</Snippet>
+			<div className="mt-8 w-full max-w-lg flex gap-2  flex-col">
+
+				<Input  className="w-full" radius="lg" type="text"  placeholder="Enter M3U8 url" />
+				<Button
+					className="text-sm font-normal  text-default-600 bg-default-100"
+					variant="flat"
+				>
+				Convert
+				</Button>
 			</div>
 		</section>
 	);
